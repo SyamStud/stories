@@ -1,6 +1,6 @@
 {
     "id": "/#/",
-    "start_url": "/#/",
+    "start_url": "/stories/#/",
     "scope": "/",
     "name": "Student Story App",
     "short_name": "Student Story",
