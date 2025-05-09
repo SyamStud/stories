@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="view-transition" content="same-origin" />
+    <link rel="shortcut icon" href="favicon.png" />
+
+    <title>SPA Pertama</title>
+
+    <link rel="shortcut icon" href="favicon.png" />
+    <link rel="apple-touch-icon" href="favicon.png" />
+    <link rel="manifest" href="app.webmanifest" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+      integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+      integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+      crossorigin=""
+    ></script>
+    <style>
+      .hidden {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <header style="view-transition-name: nav">
+      <a href="#content" class="skip-content">Skip to content</a>
+
+      <h1>Dicoding Story</h1>
+
+      <nav id="navigation-drawer" class="navigation-drawer">
+        <div id="push-notification-tools" class="push-notification-tools"></div>
+
+        <a class="hidden" href="#/" id="home-link">Home</a>
+        <a class="hidden" href="#/bookmark" id="bookmark-link">Cerita Tersimpan</a>
+        <a class="hidden" href="#/add-story" id="add-story-link">Bagikan Ceritamu</a>
+        <a class="hidden" href="#/login" id="login-link">Login</a>
+        <a class="hidden" href="#/logout" id="logout-link" class="hidden">Logout</a>
+      </nav>
+      <button id="drawer-button" class="drawer-button">☰</button>
+    </header>
+
+    <main id="content" class="content"></main>
+
+    <script>
+      const mainContent = document.querySelector("#content");
+      const skipContent = document.querySelector(".skip-content");
+      skipContent.addEventListener("click", function (event) {
+        event.preventDefault();
+        skipContent.blur();
+
+        mainContent.focus();
+        mainContent.scrollIntoView();
+      });
+    </script>
+  </body>
+</html>
